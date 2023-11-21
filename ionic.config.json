@@ -1,0 +1,8 @@
+{
+  "name": "front-crud",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "4347f0e9"
+}
