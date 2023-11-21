@@ -1,0 +1,62 @@
+/* src/app/usuarios/usuarios.page.scss */
+
+ion-header {
+  ion-toolbar {
+    --background: #3880ff;
+    --color: #fff;
+    font-family: 'Roboto', sans-serif;
+    z-index: 2; /* Asegura que el encabezado esté por encima del contenido */
+  }
+}
+
+ion-content {
+  ion-list {
+    ion-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .usuario-card {
+    width: 80%;
+    margin: 10px auto;
+    font-family: 'Roboto', sans-serif;
+    position: relative; /* Añade posición relativa para que z-index funcione */
+    z-index: 1; /* Asegura que el contenido tenga un z-index inferior al encabezado */
+
+    ion-card-content {
+      display: grid;
+      grid-template-columns: auto 1fr; /* Dos columnas, la primera es el thumbnail */
+      gap: 10px;
+
+      ion-thumbnail {
+        width: 100px; /* Ancho de la miniatura */
+        height: 100px; /* Altura de la miniatura */
+        border-radius: 50%; /* Borde redondeado para la miniatura */
+        margin: auto;
+      }
+
+      img {
+        width: 100%; /* Ajustar la imagen al 100% del contenedor */
+        border-radius: 50%; /* Borde redondeado para la imagen */
+      }
+
+      .usuario-info {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .acciones {
+    ion-col {
+      display: flex;
+      justify-content: center;
+    }
+
+    ion-button {
+      margin: 5px;
+    }
+  }
+}

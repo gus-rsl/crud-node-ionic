@@ -1,0 +1,29 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Información del Usuario</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <!-- Formulario de creación de usuario -->
+      <form [formGroup]="usuarioForm" (ngSubmit)="crearUsuario()">
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input formControlName="nombre" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Edad</ion-label>
+          <ion-input type="number" formControlName="edad" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" formControlName="email" required></ion-input>
+        </ion-item>
+
+        <ion-button expand="full" type="submit" [disabled]="usuarioForm.invalid">Crear Usuario</ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

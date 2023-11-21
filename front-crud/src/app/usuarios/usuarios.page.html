@@ -1,0 +1,36 @@
+
+<br><br><br>
+<ion-content>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="irACrearUsuario()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-list>
+    <ion-item *ngFor="let usuario of usuarios">
+      <ion-card class="usuario-card">
+        <ion-card-content>
+          <ion-thumbnail slot="start">
+            <img src="https://cdn-icons-png.flaticon.com/512/219/219983.png" alt="Icono de usuario" />
+          </ion-thumbnail>
+          <div class="usuario-info">
+            <ion-card-header>
+              {{ usuario.nombre }}
+            </ion-card-header>
+            <ion-card-subtitle>Email: {{ usuario.email }}</ion-card-subtitle>
+          </div>
+          <ion-row class="acciones">
+            <ion-col>
+              <ion-button (click)="editarUsuario(usuario)">Editar</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button (click)="eliminarUsuario(usuario.email)">Eliminar</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+</ion-content>
